@@ -227,6 +227,21 @@ label{display: inline-block; max-width: 100%;margin-bottom:5px;font-weight:300; 
 .navbar-brand-text{font-size:13px;}
 .navbar-brand-text small{font-size:8px;letter-spacing:1px;}
 }
+/* Mobile navigation: keep the compact controls, hide the brand and appointment CTA. */
+@media(max-width:767px){
+.mainnav{min-height:64px;padding:8px 0!important;}
+.mainnav .container-fluid{display:flex;align-items:center;justify-content:flex-end;padding-left:16px!important;padding-right:16px!important;}
+.mainnav .navbar-brand{display:flex!important;flex:0 0 auto;flex-direction:row!important;align-items:center!important;justify-content:center!important;height:42px;margin-right:8px!important;padding:0!important;gap:4px;}
+.mainnav .navbar-brand img{width:42px!important;height:42px!important;max-height:42px!important;object-fit:contain;}
+.mainnav .navbar-brand-text{align-items:flex-start!important;text-align:left;font-size:12px!important;line-height:1.05;}
+.mainnav .navbar-brand-text small{font-size:7px!important;letter-spacing:1px!important;}
+.mainnav .order-2{display:none!important;}
+.mainnav .float-right{float:none!important;display:flex!important;align-items:center;order:2!important;margin-left:auto!important;}
+.mainnav #search-btn{display:flex!important;align-items:center;justify-content:center;width:42px;height:42px;margin:0!important;line-height:1;color:var(--main-color);font-size:19px;}
+.mainnav .navbar-toggler{display:flex!important;align-items:center;justify-content:center;flex:0 0 42px;width:42px;height:42px;margin:0 0 0 12px!important;padding:0;border-radius:50%;background:var(--main-color);}
+.mainnav .navbar-toggler .hamburger-toggle{float:none;width:40px;height:40px;}
+.mainnav .navbar-toggler .hamburger-toggle .hamburger{width:22px;height:18px;}
+}
 @media(min-width:992px){
 .navbar-nav{position:static;}
 /* .navbar-nav.inherit{position:inherit;} */
@@ -454,14 +469,3 @@ address span i{position:absolute;left:0;top:2px;}
 .insider .crumb a{color:#FFC107;text-decoration:none;}
 .insider .crumb a:hover{color:#fff;text-decoration:underline;}
 .insider .crumb i{font-size:11px;vertical-align:middle;color:rgba(255,255,255,.6);}
-
-/* ==== Samridhi card overlay (homepage image cards) ==== */
-.dcard{position:relative;display:block;width:100%;aspect-ratio:16/9;overflow:hidden;}
-.cardd>.my-3{height:100%;display:flex;}
-.cardd>.my-3>.dcard{width:100%;}
-.dcard img{position:absolute;inset:0;display:block;width:100%;height:100%;max-width:none;object-fit:cover;}
-.dcard-overlay{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 14px;background:linear-gradient(180deg,rgba(11,43,102,0) 0%,rgba(11,43,102,.93) 62%);color:#fff;z-index:2;border-radius:0 0 10px 10px;pointer-events:none;}
-.dcard-overlay b{display:block;font-size:16px;font-weight:800;line-height:1.3;margin-bottom:2px;}
-.dcard-overlay span{display:block;font-size:12.5px;line-height:1.45;color:#FFD74A;font-weight:600;}
-.dcard-overlay .dcard-link{display:inline-flex;align-items:center;gap:4px;color:#0B2B66;background:#FFC107;font-size:12.5px;font-weight:800;padding:5px 12px;border-radius:20px;width:max-content;pointer-events:none;margin-top:8px;}
-.dcard:hover .dcard-overlay{background:linear-gradient(180deg,rgba(11,43,102,0) 0%,rgba(11,43,102,.97) 55%);}
