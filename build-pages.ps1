@@ -11,7 +11,7 @@ $PHONE_EMERGENCY = '+91 74780 66817'
 $PHONE_APPT      = '+91 80160 48838'
 $EMAIL           = 'starhospitalslg@gmail.com'
 $ADDR            = '1st Floor, Sikkim Plaza, 3rd Mile Sevoke Road, Siliguri, West Bengal 734001'
-$GOOGLE_REVIEW_URL  = 'https://www.google.com/maps/place/?q=place_id:ChIJl9vokwdB5DkRhbARyniij5w&amp;hl=en'
+$GOOGLE_REVIEW_URL  = 'https://www.google.com/maps/place/Samridhi+Multispeciality+Hospital/@26.7571983,88.4412994,17z/data=!4m8!3m7!1s0x39e4410793e8db97:0x9c8fa278ca11b085!8m2!3d26.7571983!4d88.4412994!9m1!1b1'
 $GOOGLE_LOCATION_URL = 'https://www.google.com/maps/dir/?api=1&amp;destination=Samridhi+Neuro+%26+ENT+Multispeciality+Hospital&amp;destination_place_id=ChIJl9vokwdB5DkRhbARyniij5w'
 
 $shell = $shell.Replace('https://rb.gy/cx03o0', $GOOGLE_REVIEW_URL)
@@ -752,9 +752,35 @@ New-Page -Rel 'privacy-policy\index.html' -Title 'Privacy Policy - Samridhi Hosp
 "@
 
 # ============= TESTIMONIALS / PATIENTS CORNER =============
-New-Page -Rel 'testimonials\index.html' -Title 'Patient Testimonials - Samridhi Hospital Siliguri' -Desc 'Hear what our patients say about care at Samridhi Hospital Siliguri.' -Body @"
+$testimonialCards = @"
+<div class="mb-4">
+  <p class="mb-2">The excerpts below are selected from public Google reviews for Samridhi Multispeciality Hospital. Wording is unchanged except where an ellipsis indicates an excerpt.</p>
+  <a href="$GOOGLE_REVIEW_URL" target="_blank" rel="noopener" class="btn btn3 btn-sm">Read all Google reviews</a>
+</div>
+<article class="side-card mb-3">
+  <div class="d-flex align-items-center justify-content-between mb-2"><h4 class="h5 mb-0">Sima Sinha</h4><span class="text-warning fw-600" aria-label="5 out of 5 stars">★★★★★</span></div>
+  <p class="mb-2">&ldquo;I am from Siliguri and I came to Samridhi Hospital with a serious lung-related problem. I could not afford the expensive treatment at a big corporate hospital, so I was worried about how I would manage my treatment. But at Samridhi Hospital, I received very good treatment at a much more affordable cost. The doctors were experienced, caring, and gave me proper attention. The entire staff supported me throughout my treatment. &hellip; Thank you to the entire Samridhi Hospital team for your care, humanity, and support.&rdquo;</p>
+  <small class="text-muted">Public Google review</small>
+</article>
+<article class="side-card mb-3">
+  <div class="d-flex align-items-center justify-content-between mb-2"><h4 class="h5 mb-0">Ayush Chhetri</h4><span class="text-warning fw-600" aria-label="5 out of 5 stars">★★★★★</span></div>
+  <p class="mb-2">&ldquo;The hospital was very clean and well-organized, and I felt comfortable during my entire stay. I could see that everyone working there truly cared about the patients. Their hard work and dedication really stood out. I am thankful for the good treatment and support I received. It made a difficult time much easier to go through. Overall, I’m very happy with my experience and would definitely recommend this hospital to anyone who needs care. It’s a place where you feel safe, supported, and well taken care of.&rdquo;</p>
+  <small class="text-muted">Public Google review</small>
+</article>
+<article class="side-card mb-3">
+  <div class="d-flex align-items-center justify-content-between mb-2"><h4 class="h5 mb-0">Satyendra Kumar</h4><span class="text-warning fw-600" aria-label="5 out of 5 stars">★★★★★</span></div>
+  <p class="mb-2">&ldquo;&hellip; After trying several places, we finally came to Samridhi Hospital. My brother was in a very serious condition and needed emergency care and ventilator support. We requested the Samridhi team, and they admitted him and immediately started treatment. The doctors and entire medical team worked with great dedication. The nursing staff continuously supported us, and throughout this difficult time, everyone treated us with humanity and compassion. Today, the happiest moment for our family is that my brother has recovered well and has gone home. &hellip; Thank you, Samridhi Hospital, for standing with our family when we needed help the most.&rdquo;</p>
+  <small class="text-muted">Public Google review</small>
+</article>
+<article class="side-card mb-3">
+  <div class="d-flex align-items-center justify-content-between mb-2"><h4 class="h5 mb-0">Ajeet Kumar</h4><span class="text-warning fw-600" aria-label="5 out of 5 stars">★★★★★</span></div>
+  <p class="mb-2">&ldquo;&hellip; At Samridhi Hospital, the doctors immediately examined the patient and started the necessary treatment. The doctors explained the situation clearly and guided us throughout the treatment. The nursing staff and other hospital staff were also very supportive and caring. What impressed us most was the personal attention and dedication of the doctors. &hellip; Thankfully, the patient improved and we were able to return home with much more confidence and relief. &hellip; Very grateful to the entire team. Highly recommended for their care and dedication.&rdquo;</p>
+  <small class="text-muted">Public Google review</small>
+</article>
+"@
+New-Page -Rel 'testimonials\index.html' -Title 'Patient Testimonials - Samridhi Hospital Siliguri' -Desc 'Selected public Google reviews from patients of Samridhi Hospital Siliguri.' -Body @"
 <div class="page-inner"><span class="page-wm"></span><div class="container"><h1>Patient Testimonials</h1><div class="crumb"><a href="index.html">Home</a> <i class="bi bi-chevron-right"></i> Testimonials</div></div></div>
-<section class="sec-pad"><div class="container"><div class="row"><div class="col-12 col-lg-8">$(ConvertTo-BlockHtml (Get-Txt 'testimonials'))</div><div class="col-12 col-lg-4">$(Get-Sidebar)</div></div></div></section>
+<section class="sec-pad"><div class="container"><div class="row"><div class="col-12 col-lg-8">$testimonialCards</div><div class="col-12 col-lg-4">$(Get-Sidebar)</div></div></div></section>
 "@
 
 New-Page -Rel 'patients-corner\index.html' -Title "Patient's Corner - Samridhi Hospital Siliguri" -Desc "Useful health information and resources for patients at Samridhi Hospital Siliguri." -Body @"
