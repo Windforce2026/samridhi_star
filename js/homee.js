@@ -10,8 +10,9 @@ $(document).ready(function () {
       animateOut: "fadeOut",
       animateIn: "fadeIn",
       smartSpeed: 500,
-      autoplay: 5000,
-      autoplayHoverPause: true,
+      autoplay: true,
+      autoplayTimeout: 5000,
+      autoplayHoverPause: false,
       navText: [
         '<i class="bi bi-arrow-left-short"></i>',
         '<i class="bi bi-arrow-right-short"></i>',
