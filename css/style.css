@@ -233,8 +233,8 @@ label{display: inline-block; max-width: 100%;margin-bottom:5px;font-weight:300; 
 .mainnav .container-fluid{display:flex;align-items:center;justify-content:flex-end;padding-left:16px!important;padding-right:16px!important;}
 .mainnav .navbar-brand{display:flex!important;flex:0 0 auto;flex-direction:row!important;align-items:center!important;justify-content:center!important;height:42px;margin-right:8px!important;padding:0!important;gap:4px;}
 .mainnav .navbar-brand img{width:42px!important;height:42px!important;max-height:42px!important;object-fit:contain;}
-.mainnav .navbar-brand-text{align-items:flex-start!important;text-align:left;font-size:12px!important;line-height:1.05;}
-.mainnav .navbar-brand-text small{font-size:7px!important;letter-spacing:1px!important;}
+.mainnav .navbar-brand-text{align-items:flex-start!important;text-align:left;font-family:Arial,Helvetica,sans-serif!important;font-size:20px!important;font-weight:700!important;line-height:.95;letter-spacing:.2px;}
+.mainnav .navbar-brand-text small{font-family:Arial,Helvetica,sans-serif!important;font-size:13px!important;font-weight:700!important;letter-spacing:1.4px!important;}
 .mainnav .order-2{display:none!important;}
 .mainnav .float-right{float:none!important;display:flex!important;align-items:center;order:2!important;margin-left:auto!important;}
 .mainnav #search-btn{display:flex!important;align-items:center;justify-content:center;width:42px;height:42px;margin:0!important;line-height:1;color:var(--main-color);font-size:19px;}
