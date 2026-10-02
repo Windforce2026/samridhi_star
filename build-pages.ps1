@@ -9,7 +9,7 @@ if(-not $shell.Contains('<!--PAGEBODY-->')){ throw 'PAGEBODY placeholder missing
 
 $PHONE_EMERGENCY = '+91 74780 66817'
 $PHONE_APPT      = '+91 80160 48838'
-$EMAIL           = 'starhospitalslg@gmail.com'
+$EMAIL           = 'info@samridhihospital.com'
 $ADDR            = '1st Floor, Sikkim Plaza, 3rd Mile Sevoke Road, Siliguri, West Bengal 734001'
 $GOOGLE_REVIEW_URL  = 'https://www.google.com/maps/place/Samridhi+Multispeciality+Hospital/@26.7571983,88.4412994,17z/data=!4m8!3m7!1s0x39e4410793e8db97:0x9c8fa278ca11b085!8m2!3d26.7571983!4d88.4412994!9m1!1b1'
 $GOOGLE_LOCATION_URL = 'https://www.google.com/maps/dir/?api=1&amp;destination=Samridhi+Neuro+%26+ENT+Multispeciality+Hospital&amp;destination_place_id=ChIJl9vokwdB5DkRhbARyniij5w'
@@ -708,7 +708,7 @@ New-Page -Rel 'contact\index.html' -Title 'Contact Us - Samridhi Hospital Siligu
 <div class="row g-3">
 <div class="col-12 col-md-6"><label class="form-label">Full Name *</label><input type="text" class="form-control" required placeholder="Your Name"></div>
 <div class="col-12 col-md-6"><label class="form-label">Phone No *</label><input type="tel" class="form-control" required placeholder="Your Phone"></div>
-<div class="col-12"><label class="form-label">Email ID</label><input type="email" class="form-control" placeholder="you@example.com"></div>
+<div class="col-12"><label class="form-label">Email ID</label><input type="email" class="form-control" placeholder="info@samridhihospital.com"></div>
 <div class="col-12"><label class="form-label">Subject</label><input type="text" class="form-control" placeholder="How can we help?"></div>
 <div class="col-12"><label class="form-label">Your Message</label><textarea class="form-control" rows="5" placeholder="Type your message here..."></textarea></div>
 <div class="col-12"><button type="submit" class="btn w-100" style="background:linear-gradient(90deg,#FFC107,#D4AF37);color:#0B2B66;font-weight:800;border:0;">SEND MESSAGE</button></div>
