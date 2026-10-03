@@ -132,7 +132,7 @@ $DOCTYPE = @(
  @{dept='dermatology'; slug='dr-suman-gupta'; name='Dr. Suman Gupta'; qual='MBBS, MD, DM (Dermatology)'; img='images/176060971117262061151705477547doctor.svg'; about='Dermatologist providing comprehensive skin and hair care.'; quals=@('MBBS','MD','DM (Dermatology)'); exps=@('Medical &amp; cosmetic dermatology','Skin, hair &amp; nail disorder management','Dermatological procedures','Preventive skin care')},
  @{dept='orthopaedics-and-joint-replacement-surgery'; slug='dr-mrityunjay-roy'; name='Dr. Mrityunjay Roy'; qual='MBBS, MS (Orthopaedics)'; img='images/176060971117262061151705477547doctor.svg'; about='Orthopedic surgeon with over 1,000 joint replacement procedures to his credit.'; quals=@('MBBS','MS (Orthopedics)','Fellowship in Arthroscopy &amp; Sports Medicine','Fellowship in Shoulder &amp; Elbow Surgery (Arthroscopy &amp; Arthroplasty)'); exps=@('Joint replacement surgery - knee, hip, shoulder &amp; elbow','Total elbow replacement (first in the region)','Arthroscopy &amp; sports injury management','Trauma &amp; fracture care')},
  @{dept='orthopaedics-and-joint-replacement-surgery'; slug='dr-ranjit-kumar-singh'; name='Dr. Ranjit Kumar Singh'; qual='MBBS, MS (Orthopaedics), MCh (Joint Replacement)'; img='images/176060971117262061151705477547doctor.svg'; about='Orthopedic surgeon with over 10 years of clinical practice.'; quals=@('MBBS','MS (Orthopaedics)','MCh (Joint Replacement)','FIMS - International Fellowship'); exps=@('Orthopedic care &amp; joint replacement','Management of bone, joint &amp; trauma conditions','Surgical &amp; non-surgical treatment planning','Rehabilitation &amp; post-operative guidance')},
- @{dept='gastroenterology'; slug='dr-prabhat-ranjan'; name='Dr. Prabhat Ranjan'; qual='MBBS, MD, DM (Gastroenterology)'; img='images/doctor/dr-prabhat-ranjan.jpeg'; about='Medical gastroenterologist with over 15 years of expertise in advanced endoscopic procedures.'; quals=@('MBBS','MD (Internal/General Medicine)','DM (Gastroenterology) - S.N. Medical College, Jodhpur'); exps=@('Endoscopic Retrograde Cholangiopancreatography (ERCP)','Diagnostic &amp; therapeutic Endoscopic Ultrasound (EUS)','Double Balloon Enteroscopy','Third space endoscopy - ESD and POEM','MRCP &amp; FibroScan')},
+ @{dept='gastroenterology'; slug='dr-prabhat-ranjan'; name='Dr. Prabhat Ranjan'; qual='MBBS, MD, DM (Gastroenterology)'; img='images/doctor/dr-prabhat-ranjan.jpeg'; about='Medical gastroenterologist with over 15 years of expertise in advanced endoscopic procedures.'; quals=@('MBBS','MD (Internal/Medicines)','DM (Gastroenterology) - S.N. Medical College, Jodhpur'); exps=@('Endoscopic Retrograde Cholangiopancreatography (ERCP)','Diagnostic &amp; therapeutic Endoscopic Ultrasound (EUS)','Double Balloon Enteroscopy','Third space endoscopy - ESD and POEM','MRCP &amp; FibroScan')},
  @{dept='obstetrics-and-gynaecology'; slug='dr-sumit-das'; name='Dr. Sumit Das'; qual='MBBS, MS, DNB (Obstetrics &amp; Gynaecology)'; img='images/176060971117262061151705477547doctor.svg'; about='Obstetrician and gynaecologist with expertise in high-risk pregnancy care and laparoscopic surgery.'; quals=@('MBBS','MS (Obstetrics &amp; Gynaecology)','DNB (Obstetrics &amp; Gynaecology)'); exps=@('Obstetrics - prenatal care, high-risk deliveries &amp; reproductive health','Management of pregnancy-related disorders, irregular periods &amp; ovarian cysts','Laparoscopic gynaecological surgeries &amp; pelvic procedures','Routine obstetric &amp; gynaecological interventions')},
  @{dept='obstetrics-and-gynaecology'; slug='dr-sindhu-bala'; name='Dr. Sindhu Bala'; qual='MBBS, MD, DGO (Obstetrics &amp; Gynaecology)'; img='images/176060971117262061151705477547doctor.svg'; about='Gynaecologist, obstetrician and IVF / infertility specialist.'; quals=@('MBBS','MD (Obstetrics &amp; Gynaecology)','DGO','Fellowship in In-Vitro Fertilization (IVF)'); exps=@('IVF, IUI, egg/embryo donation &amp; TESA','Management of high-risk pregnancies','Laparoscopic surgery, irregular periods &amp; ovarian cysts','Preventive care &amp; gynaecological cancer care')},
  @{dept='obstetrics-and-gynaecology'; slug='dr-neelam-singla'; name='Dr. Neelam Singla'; qual='MBBS, MD, DGO (Obstetrics &amp; Gynaecology)'; img='images/176060971117262061151705477547doctor.svg'; about='Obstetrician, gynaecologist and cosmetic gynaecologist.'; quals=@('MBBS','MD / MS (Obstetrics &amp; Gynaecology)','DGO','Diploma in Functional &amp; Regenerative Cosmetic Gynaecology'); exps=@('Obstetrics &amp; pregnancy care - antenatal, normal &amp; cesarean deliveries, high-risk pregnancy management','Gynaecological care - menstrual disorders, PCOD/PCOS, fibroids &amp; menopausal health','Infertility evaluation &amp; personalised treatment plans','Functional &amp; cosmetic gynaecology','Preventive oncology - Pap smears, HPV testing &amp; colposcopy')},
@@ -306,7 +306,7 @@ $links
 }
 
 $DEF_DISPLAY = @{
- 'advanced-laparoscopy-general-and-cancer-surgery'='Advanced Laparoscopy, General &amp; Cancer Surgery'
+ 'advanced-laparoscopy-general-and-cancer-surgery'='General Surgery'
  'biochemistry'='Biochemistry'
  'cardiology-and-cardiac-surgery'='Cardiology and Cardiac Surgery'
  'dermatology'='Dermatology'
@@ -315,28 +315,28 @@ $DEF_DISPLAY = @{
  'ent'='ENT'
  'family-medicine'='Family Medicine'
  'gastroenterology'='Gastroenterology'
- 'general-medicine'='General Medicine'
+ 'general-medicine'='Medicines'
  'haematology'='Haematology'
- 'icu-and-critical-care'='ICU and Critical Care'
+ 'icu-and-critical-care'='Critical Care'
  'internal-medicine'='Internal Medicine'
  'maxillofacial-surgery'='Maxillofacial Surgery'
  'microbiology'='Microbiology'
  'nephrology'='Nephrology'
- 'neurology-and-neurosurgery'='Neurology and Neurosurgery'
- 'obstetrics-and-gynaecology'='Obstetrics and Gynaecology'
- 'orthopaedics-and-joint-replacement-surgery'='Orthopaedics &amp; Joint Replacement Surgery'
+ 'neurology-and-neurosurgery'='Neuro Surgery'
+ 'obstetrics-and-gynaecology'='Gynecology'
+ 'orthopaedics-and-joint-replacement-surgery'='Orthopaedics'
  'paediatric-surgery'='Paediatric Surgery'
- 'paediatrics-and-neonatology'='Paediatrics and Neonatology'
+ 'paediatrics-and-neonatology'='Paediatrics'
  'pathology'='Pathology'
  'physiotherapy'='Physiotherapy'
- 'plastic-and-reconstructive-surgery'='Plastic &amp; Reconstructive Surgery'
+ 'plastic-and-reconstructive-surgery'='Plastic Surgery'
  'psychiatry'='Psychiatry'
  'pulmonology'='Pulmonology'
  'radiology-and-interventional-radiology'='Radiology &amp; Interventional Radiology'
  'special-clinic'='Special Clinic'
  'spine-surgery'='Spine Surgery'
  'trauma-surgery'='Trauma Surgery'
- 'urology-andrology-and-uro-oncology'='Urology, Andrology and Uro Oncology'
+ 'urology-andrology-and-uro-oncology'='Urology'
 }
 $DEPT_SLUGS = $DEF_DISPLAY.Keys | Sort-Object
 
