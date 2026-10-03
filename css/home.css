@@ -30,10 +30,10 @@
 }
 .main-banner-area-wrap{overflow:hidden;position:relative;z-index:1;}
 @media (min-width:992px){
-.former{margin-top:-80px!important;}
+.former{margin-top:20px!important;}
 }
 @media(min-width:768px){
-.former{margin-top:-20px;}
+.former{margin-top:20px;}
 }
 @media (max-width:767px){
 .former{margin-top:15px;}
@@ -221,3 +221,12 @@
 .presource p{color:#4A5B7D;}
 .page-inner h1{text-shadow:0 2px 10px rgba(0,0,0,.25);}
 .form-select:focus,.form-control:focus{border-color:var(--main-color3);box-shadow:0 0 0 .2rem rgba(212,175,55,.25);}
+/* === hero slide overlay links === */
+.herocard{position:relative;display:block;line-height:0}
+.herocard img{display:block;width:100%;height:auto}
+.herocard .cover{position:absolute;inset:0;z-index:1;display:block}
+.herocard .cta{position:absolute;z-index:2;display:block}
+.herocard .cta-dept{left:62.8%;top:83.2%;width:17.4%;height:9.5%}
+.herocard .cta-appt{left:49.2%;top:80.1%;width:18.2%;height:9.6%}
+.herocard .cta-explore{left:5.7%;top:76.5%;width:20.8%;height:9.6%}
+
