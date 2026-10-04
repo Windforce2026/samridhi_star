@@ -469,3 +469,29 @@ address span i{position:absolute;left:0;top:2px;}
 .insider .crumb a{color:#FFC107;text-decoration:none;}
 .insider .crumb a:hover{color:#fff;text-decoration:underline;}
 .insider .crumb i{font-size:11px;vertical-align:middle;color:rgba(255,255,255,.6);}
+
+/* ===== Navbar: icon-only appointment + compact mobile header ===== */
+.appt-icon-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border-radius:50%;font-size:18px;line-height:1}
+.appt-icon-btn i{margin:0!important}
+
+@media (max-width:991px){
+  /* hide the round search button on mobile */
+  .mainnav #search-btn{display:none!important}
+  /* compact logo + brand */
+  .mainnav .navbar-brand img.logo-one{width:92px!important;height:auto}
+  .mainnav .navbar-brand-text{font-size:18px!important;line-height:1.05}
+  .mainnav .navbar-brand-text small{font-size:11px!important}
+  .mainnav .navbar{padding-top:.35rem!important;padding-bottom:.35rem!important}
+  .mainnav .navbar-brand{margin-right:.35rem!important}
+  .mainnav .ms-2{margin-left:.35rem!important}
+  .appt-icon-btn{width:34px;height:34px;font-size:15px}
+  .mainnav .navbar-toggler{padding:.25rem .4rem}
+  .mainnav .hamburger-toggle{width:24px;height:20px}
+}
+@media (max-width:575px){
+  .mainnav .navbar-brand img.logo-one{width:80px!important}
+  .mainnav .navbar-brand-text{font-size:16px!important}
+  .mainnav .navbar-brand-text small{font-size:10px!important}
+  .appt-icon-btn{width:30px;height:30px;font-size:14px}
+  .mainnav .navbar-toggler{margin-left:.25rem!important;padding:.2rem .3rem}
+}

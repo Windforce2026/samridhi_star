@@ -173,7 +173,7 @@ function Get-DoctorBody($doc){
 <ul class="pjustify mb-0">$quals</ul>
 <h4 class="fw-600 mb-2 mt-4"><i class="bi bi-graph-up-arrow me-2 th-color"></i>Clinical Expertise &amp; Specializations</h4>
 <ul class="pjustify mb-0">$exps</ul>
-<a href="appointment"><img src="images/advt-samridhi.jpg" alt="Book An Appointment at Samridhi Hospital" class="max mt-4 rounded-3 border2"></a>
+<a href="appointment"><img src="images/advt-samridhi.jpg" alt="Book An Appointment at Samridhi Multispeciality Hospital" class="max mt-4 rounded-3 border2"></a>
 </div>
 <div class="col-12 col-lg-4">$(Get-Sidebar)</div>
 </div></div></section>
@@ -210,7 +210,7 @@ function Get-DeptBody([string]$display,[string]$slug,[string]$crumb2){
   $body  = $body -replace '(?m)^[ ]*(?i)(MBBS|MS|MD|DM|DGO|MCH|DNB|FNB|FRCS|MRCP)((,|, )[^,\r\n]*)*\r?\n',''
   $body  = [regex]::Replace($body,'(?:\r?\n){3,}',"`n`n")
   if(-not $intro){
-    $introHtml = "<p>$display at Samridhi Hospital Siliguri - comprehensive, patient-centric care delivered by experienced specialists.</p>"
+    $introHtml = "<p>$display at Samridhi Multispeciality Hospital Siliguri - comprehensive, patient-centric care delivered by experienced specialists.</p>"
   } else {
     $introHtml = ConvertTo-BlockHtml $intro
   }
@@ -226,10 +226,10 @@ function Get-DeptBody([string]$display,[string]$slug,[string]$crumb2){
 <div class="row">
 <div class="col-12 col-lg-8 col-md-12 my-3 pe-lg-4 pe-xl-5">
 <div class="pjustify text-justify mb-3">$introHtml</div>
-<div class="pb-4"><img src="images/department/$cover" alt="$display at Samridhi Hospital" class="max rounded-5 border2" width="900" height="450" loading="lazy"></div>
+<div class="pb-4"><img src="images/department/$cover" alt="$display at Samridhi Multispeciality Hospital" class="max rounded-5 border2" width="900" height="450" loading="lazy"></div>
 <div class="descriptionofdept pjustify">$(ConvertTo-BlockHtml $body)</div>
 $( $dcards = Get-DocCards $slug; if($dcards){ "<h3 class=""fw-600 h4 mt-4 mt-lg-5 mb-3 p-3 border22 rounded-5 bglight"">$display Doctors</h3><div class=""row"">$dcards</div>" })
-<a href="appointment"><img src="images/advt-samridhi.jpg" alt="Book An Appointment at Samridhi Hospital" class="max mt-4 mt-lg-5 rounded-3 border2"></a>
+<a href="appointment"><img src="images/advt-samridhi.jpg" alt="Book An Appointment at Samridhi Multispeciality Hospital" class="max mt-4 mt-lg-5 rounded-3 border2"></a>
 <div class="clearfix"></div>
 </div>
 <div class="col-12 col-lg-4 col-md-12 my-3 sidebar">
@@ -377,7 +377,7 @@ function New-Page{
   }
   $html = [regex]::Replace($html,'(<a[^>]*?)href="https://www\.starhospitalslg\.com"','$1' + 'href="' + $p + 'index.html"')
   $html = $html -replace 'Star Health','Samridhi'
-  $html = $html -replace 'Star Hospital','Samridhi Hospital'
+  $html = $html -replace 'Star Hospital','Samridhi Multispeciality Hospital'
   $html = $html -replace '\bStar\b','Samridhi'
   $html = $html -replace '1800 123 8044','+91 74780 66817'
   $html = $html -replace '80010 06060','+91 80160 48838'
@@ -404,13 +404,13 @@ $allDeptLinks = ($starDeptOrder | ForEach-Object { $d = $_; "<li class=""bg-whit
 
 $txtAbout = Get-Txt 'about'
 $intro = $txtAbout.Substring($txtAbout.IndexOf('At Star Hospital, we take our commitment'))
-$intro = $intro.Substring(0, $intro.IndexOf('Powered by')).Replace('Star Hospital','Samridhi Hospital')
+$intro = $intro.Substring(0, $intro.IndexOf('Powered by')).Replace('Star Hospital','Samridhi Multispeciality Hospital')
 
-New-Page -Rel 'about\index.html' -Title 'About Samridhi Hospital | Neuro &amp; ENT Multispeciality Hospital Siliguri' -Desc 'Samridhi Hospital Siliguri is a 30-bedded multispeciality hospital offering advanced neuro & ENT care, diagnostics, ICU and 24x7 emergency.' -NoPrefooter -Body @"
+New-Page -Rel 'about\index.html' -Title 'About Samridhi Multispeciality Hospital | Neuro &amp; ENT Multispeciality Hospital Siliguri' -Desc 'Samridhi Multispeciality Hospital Siliguri is a 30-bedded multispeciality hospital offering advanced neuro & ENT care, diagnostics, ICU and 24x7 emergency.' -NoPrefooter -Body @"
 <div class="about-hero-sec">
 <div class="container">
 <div class="about-hero">
-<img class="about-hero-img" src="images/about-hero.jpg" alt="About Samridhi Hospital - More Than Just a Hospital, We Are Your Family">
+<img class="about-hero-img" src="images/about-hero.jpg" alt="About Samridhi Multispeciality Hospital - More Than Just a Hospital, We Are Your Family">
 <div class="about-shade"></div>
 <div class="about-content">
 <p class="about-tag"><span class="tagline-white">More Than Just a Hospital</span><br><span class="tagline-gold">We Are Your Family</span></p>
@@ -429,11 +429,11 @@ $(ConvertTo-BlockHtml $intro)
 </section>
 "@
 
-New-Page -Rel 'departments\index.html' -Title 'Departments - Samridhi Hospital Siliguri' -Desc 'Explore our 30+ medical departments at Samridhi Hospital Siliguri - cardiology, neuro, ENT, ortho, gynae and more.' -Body @"
+New-Page -Rel 'departments\index.html' -Title 'Departments - Samridhi Multispeciality Hospital Siliguri' -Desc 'Explore our 30+ medical departments at Samridhi Multispeciality Hospital Siliguri - cardiology, neuro, ENT, ortho, gynae and more.' -Body @"
 <div class="page-inner"><span class="page-wm"></span><div class="container"><h1>Our Departments</h1><div class="crumb"><a href="index.html">Home</a> <i class="bi bi-chevron-right"></i> Departments</div></div></div>
 <section class="sec-pad">
 <div class="container">
-<div class="sec-title text-center mb-5"><h2>Specialities <span class="grd-text">at Samridhi Hospital</span></h2><p>Comprehensive, patient-centric care delivered by expert specialists.</p></div>
+<div class="sec-title text-center mb-5"><h2>Specialities <span class="grd-text">at Samridhi Multispeciality Hospital</span></h2><p>Comprehensive, patient-centric care delivered by expert specialists.</p></div>
 <div class="row g-4">
 $( ($DEPT_SLUGS | ForEach-Object { $d = $_; $disp = $DEF_DISPLAY[$d] -replace '&amp;','&amp;'; "<div class=""col-12 col-sm-6 col-lg-4""><div class=""dept-card""><i class=""bi bi-hospital""></i><h3>$disp</h3><p>Specialist care with advanced diagnostics for every need.</p><a href=""department/$d"">Know More <i class=""bi bi-arrow-right""></i></a></div></div>" }) -join "`n" )
 </div>
@@ -441,7 +441,7 @@ $( ($DEPT_SLUGS | ForEach-Object { $d = $_; $disp = $DEF_DISPLAY[$d] -replace '&
 </section>
 "@
 
-New-Page -Rel 'laboratory-services\index.html' -Title 'Laboratory Services - Samridhi Hospital Siliguri' -Desc 'Accurate pathology, biochemistry, histopathology, microbiology and haematology testing at Samridhi Hospital Siliguri.' -Body @"
+New-Page -Rel 'laboratory-services\index.html' -Title 'Laboratory Services - Samridhi Multispeciality Hospital Siliguri' -Desc 'Accurate pathology, biochemistry, histopathology, microbiology and haematology testing at Samridhi Multispeciality Hospital Siliguri.' -Body @"
 <div class="page-inner"><span class="page-wm"></span><div class="container"><h1>Laboratory Services</h1><div class="crumb"><a href="index.html">Home</a> <i class="bi bi-chevron-right"></i> Services / Laboratory Services</div></div></div>
 <section class="sec-pad">
 <div class="container">
@@ -464,13 +464,13 @@ $DIAG = @(
  @{slug='colonoscopy'; name='Colonoscopy'; icon='bi-notes'; short='Complete colon examination for colorectal screening, polyp detection and biopsy.'; img='colonoscopy.jpg'; about='Complete colon examination for colorectal screening, polyp detection and biopsy with sedation support and same-day preliminary findings.'; offers=@('Colorectal screening','Polyp detection &amp; biopsy','Sedation-supported procedure','Same-day preliminary findings'); benefits=@('Complete colon examination','Comfortable sedation','Early detection focus','Timely preliminary report')}
 )
 
-New-Page -Rel 'diagnostic-services\index.html' -Title 'Diagnostic Services - Samridhi Hospital Siliguri' -Desc 'CT Scan, Digital X-Ray, Ultrasound (USG), ECG, EEG, Endoscopy, Colonoscopy and Pathology diagnostics at Samridhi Hospital Siliguri.' -Body @"
+New-Page -Rel 'diagnostic-services\index.html' -Title 'Diagnostic Services - Samridhi Multispeciality Hospital Siliguri' -Desc 'CT Scan, Digital X-Ray, Ultrasound (USG), ECG, EEG, Endoscopy, Colonoscopy and Pathology diagnostics at Samridhi Multispeciality Hospital Siliguri.' -Body @"
 <div class="page-inner"><span class="page-wm"></span><div class="container"><h1>Diagnostic Services</h1><div class="crumb"><a href="index.html">Home</a> <i class="bi bi-chevron-right"></i> Services / Diagnostic Services</div></div></div>
 <section class="sec-pad">
 <div class="container">
 <div class="row">
 <div class="col-12 col-lg-8">
-<p>Samridhi Hospital offers a complete range of diagnostic services under one roof &mdash; from digital imaging and cardiac screening tests to laboratory and endoscopic procedures. Our advanced equipment, experienced specialists and rapid reporting help your doctor reach the right diagnosis, faster.</p>
+<p>Samridhi Multispeciality Hospital offers a complete range of diagnostic services under one roof &mdash; from digital imaging and cardiac screening tests to laboratory and endoscopic procedures. Our advanced equipment, experienced specialists and rapid reporting help your doctor reach the right diagnosis, faster.</p>
 <div class="row g-4 mt-1">
 $( ($DIAG | ForEach-Object { $d = $_; "<div class=""col-12 col-sm-6 col-lg-4""><div class=""dept-card""><i class=""bi $($d.icon)""></i><h3>$($d.name)</h3><p>$($d.short)</p><a href=""diagnostic-services/$($d.slug)"">Know More <i class=""bi bi-arrow-right""></i></a></div></div>" }) -join "`n" )
 </div>
@@ -483,13 +483,13 @@ $( ($DIAG | ForEach-Object { $d = $_; "<div class=""col-12 col-sm-6 col-lg-4""><
 
 $DIAG | ForEach-Object {
 $d = $_
-New-Page -Rel "diagnostic-services\$($d.slug)\index.html" -Depth 2 -Title "$($d.name) - Samridhi Hospital Siliguri" -Desc $d.about -Body @"
+New-Page -Rel "diagnostic-services\$($d.slug)\index.html" -Depth 2 -Title "$($d.name) - Samridhi Multispeciality Hospital Siliguri" -Desc $d.about -Body @"
 <div class="page-inner"><span class="page-wm"></span><div class="container"><h1>$($d.name)</h1><div class="crumb"><a href="index.html">Home</a> <i class="bi bi-chevron-right"></i> Services / Diagnostic Services / $($d.name)</div></div></div>
 <section class="sec-pad">
 <div class="container">
 <div class="row">
 <div class="col-12 col-lg-8">
-$(if($d.img){ "<img src=""images/diagnostics/$($d.img)"" alt=""$($d.name) at Samridhi Hospital"" class=""img-fluid rounded-4 mb-4"" loading=""lazy"">" } else { '' })
+$(if($d.img){ "<img src=""images/diagnostics/$($d.img)"" alt=""$($d.name) at Samridhi Multispeciality Hospital"" class=""img-fluid rounded-4 mb-4"" loading=""lazy"">" } else { '' })
 <h3 class="sec-title" style="font-size:20px;">About this service</h3>
 <p>$($d.about)</p>
 <h3 class="sec-title" style="font-size:20px;">What we offer</h3>
@@ -513,7 +513,7 @@ $( $d.benefits | ForEach-Object { "<li><i class=""bi bi-check2-circle""></i> $_<
 "@
 }
 
-New-Page -Rel 'support-services\index.html' -Title 'Support Services - Samridhi Hospital Siliguri' -Desc '24x7 emergency, modular OT, ICU/NICU, pharmacy, dialysis, cathlab and canteen at Samridhi Hospital Siliguri.' -Body @"
+New-Page -Rel 'support-services\index.html' -Title 'Support Services - Samridhi Multispeciality Hospital Siliguri' -Desc '24x7 emergency, modular OT, ICU/NICU, pharmacy, dialysis, cathlab and canteen at Samridhi Multispeciality Hospital Siliguri.' -Body @"
 <div class="page-inner"><span class="page-wm"></span><div class="container"><h1>Support Services</h1><div class="crumb"><a href="index.html">Home</a> <i class="bi bi-chevron-right"></i> Services / Support Services</div></div></div>
 <section class="py-4 py-lg-5 min70">
 <div class="container">
@@ -523,18 +523,18 @@ New-Page -Rel 'support-services\index.html' -Title 'Support Services - Samridhi 
 <p>Samridhi Health also offers its patients with extra support services to ensure that they get the best healthcare solutions from us. From state-of-the-art facilities to 24x7 emergency care, our support service is always there to provide the best treatment against unexpected medical conditions.</p>
 <h2 class="h5 fw-600">24x7 Emergency &amp; Trauma Care</h2>
 <p>Whether you have been in a traffic accident or suffered from a severe health condition, our team of emergency and trauma care is always there to manage your condition with the best quality healthcare service.</p>
-<img src="images/services/trauma-care.jpg" alt="24x7 Emergency and Trauma Care at Samridhi Hospital" class="w-100 mb-3 rounded-3 border2" loading="lazy">
+<img src="images/services/trauma-care.jpg" alt="24x7 Emergency and Trauma Care at Samridhi Multispeciality Hospital" class="w-100 mb-3 rounded-3 border2" loading="lazy">
 <h3 class="h5 fw-600">Ultra Modular Operation Theatre</h3>
-<p>Samridhi Hospital features an ultra-modular operation theatre equipped with modern technology and infrastructure that allows us to provide the best surgical treatment to our patients.</p>
-<img src="images/services/ot.jpg" alt="Ultra Modular Operation Theatre at Samridhi Hospital" class="w-100 mb-3 rounded-3 border2" loading="lazy">
+<p>Samridhi Multispeciality Hospital features an ultra-modular operation theatre equipped with modern technology and infrastructure that allows us to provide the best surgical treatment to our patients.</p>
+<img src="images/services/ot.jpg" alt="Ultra Modular Operation Theatre at Samridhi Multispeciality Hospital" class="w-100 mb-3 rounded-3 border2" loading="lazy">
 <h3 class="h5 fw-600">Critical Care Units (ICU, NICU, HDU)</h3>
 <p>We are well equipped with a wide range of critical care units that are designed to provide the utmost care to patients suffering from life-threatening conditions.</p>
 <h3 class="h5 fw-600">Pharmacy</h3>
-<p>Samridhi Hospital also offers its patients with hospital pharmacy headed by senior pharmacists that is responsible for dispensing medications and monitoring the drug dosage forms.</p>
-<img src="images/services/pharmacy.jpg" alt="Pharmacy at Samridhi Hospital" class="w-100 mb-3 rounded-3 border2" loading="lazy">
+<p>Samridhi Multispeciality Hospital also offers its patients with hospital pharmacy headed by senior pharmacists that is responsible for dispensing medications and monitoring the drug dosage forms.</p>
+<img src="images/services/pharmacy.jpg" alt="Pharmacy at Samridhi Multispeciality Hospital" class="w-100 mb-3 rounded-3 border2" loading="lazy">
 <h3 class="h5 fw-600">Dialysis</h3>
 <p>Dialysis is a process of filtering excess fluid from the body of a person whose kidney has stopped working. Our department of nephrology features a dialysis unit that is used to filter the extra fluids of people suffering from kidney failure.</p>
-<img src="images/services/dialysis.jpg" alt="Dialysis at Samridhi Hospital" class="w-100 mb-3 rounded-3 border2" loading="lazy">
+<img src="images/services/dialysis.jpg" alt="Dialysis at Samridhi Multispeciality Hospital" class="w-100 mb-3 rounded-3 border2" loading="lazy">
 <h3 class="h5 fw-600">Canteen</h3>
 <p>Our Hospital also houses a canteen headed by a chef who understands the meaning of healthy nutrition and its benefits for the healing of patients. From freshly prepared soup to a healthy meal the canteen serves a range of dishes that will allow our patients to heal quickly.</p>
 <h3 class="h5 fw-600">Cathlab</h3>
@@ -569,32 +569,32 @@ $allDeptLinks
 </section>
 "@
 
-New-Page -Rel 'facilities\index.html' -Title 'Facilities - Samridhi Hospital Siliguri' -Desc 'Out-patient &amp; in-patient care, 24/7 emergency, pharmacy, critical care, OT and diagnostics at Samridhi Hospital Siliguri.' -Body @"
+New-Page -Rel 'facilities\index.html' -Title 'Facilities - Samridhi Multispeciality Hospital Siliguri' -Desc 'Out-patient &amp; in-patient care, 24/7 emergency, pharmacy, critical care, OT and diagnostics at Samridhi Multispeciality Hospital Siliguri.' -Body @"
 <div class="page-inner"><span class="page-wm"></span><div class="container"><h1>Hospital Facilities</h1><div class="crumb"><a href="index.html">Home</a> <i class="bi bi-chevron-right"></i> Facilities</div></div></div>
 <section class="sec-pad">
 <div class="container">
 <div class="row">
 <div class="col-12 col-lg-8">
-<p>At Samridhi Hospital we offer a wide range of comprehensive healthcare services that cater to the diverse needs of our patients. Staffed by a team of highly skilled healthcare professionals - experienced doctors, nurses and support staff - our cutting-edge facilities and advanced technology enable us to deliver the highest standards of patient-centred care. You can trust us to work tirelessly to ensure your well-being and provide you with the best possible healthcare experience.</p>
+<p>At Samridhi Multispeciality Hospital we offer a wide range of comprehensive healthcare services that cater to the diverse needs of our patients. Staffed by a team of highly skilled healthcare professionals - experienced doctors, nurses and support staff - our cutting-edge facilities and advanced technology enable us to deliver the highest standards of patient-centred care. You can trust us to work tirelessly to ensure your well-being and provide you with the best possible healthcare experience.</p>
 <h3 class="sec-title mt-4 mb-2" style="font-size:20px;">Out-Patient and In-Patient</h3>
 <p>We deliver premium quality, patient-centric facilities. We achieve this through our holistic services and smart patient-centric arrangements, which are accessible to everyone.</p>
-<img src="images/facilities/ipd.jpg" alt="Out-Patient and In-Patient at Samridhi Hospital" style="width:100%;border-radius:14px;margin:10px 0 6px;" loading="lazy">
+<img src="images/facilities/ipd.jpg" alt="Out-Patient and In-Patient at Samridhi Multispeciality Hospital" style="width:100%;border-radius:14px;margin:10px 0 6px;" loading="lazy">
 <h3 class="sec-title mt-4 mb-2" style="font-size:20px;">24/7 Emergency Services</h3>
 <p>The Emergency Casualty Department is here to provide immediate assistance without the need for prior appointments. Staffed by a team of experienced emergency medicine specialists, it is always ready to meet your urgent medical needs with prompt and expert care.</p>
-<img src="images/facilities/emergency.jpg" alt="24/7 Emergency Services at Samridhi Hospital" style="width:100%;border-radius:14px;margin:10px 0 6px;" loading="lazy">
+<img src="images/facilities/emergency.jpg" alt="24/7 Emergency Services at Samridhi Multispeciality Hospital" style="width:100%;border-radius:14px;margin:10px 0 6px;" loading="lazy">
 <h3 class="sec-title mt-4 mb-2" style="font-size:20px;">Round The Clock Pharmacy</h3>
 <p>Delivering timely medical services and medications to both inpatients and outpatients, in addition to supporting healthcare professionals in their care of patients.</p>
 <h3 class="sec-title mt-4 mb-2" style="font-size:20px;">Laboratory and Pathology</h3>
 <p>For optimizing patient care and addressing the complexities of the healthcare system, our highly specialized laboratory and clinical testing services play an essential role, ensuring quick and accurate results for every patient.</p>
-<img src="images/facilities/laboratory.jpg" alt="Laboratory and Pathology at Samridhi Hospital" style="width:100%;border-radius:14px;margin:10px 0 6px;" loading="lazy">
+<img src="images/facilities/laboratory.jpg" alt="Laboratory and Pathology at Samridhi Multispeciality Hospital" style="width:100%;border-radius:14px;margin:10px 0 6px;" loading="lazy">
 <h3 class="sec-title mt-4 mb-2" style="font-size:20px;">Critical Care for All</h3>
 <p>Managing patients facing acute, life-threatening illnesses or injuries is the core focus of the Critical Care Department, which stands as a multidisciplinary healthcare speciality.</p>
 <h3 class="sec-title mt-4 mb-2" style="font-size:20px;">Well-Equipped Operation Theatre</h3>
 <p>With our fully-equipped operation theatre, we offer comprehensive and advanced surgical facilities, ensuring safe and specialized surgeries for all complexity levels.</p>
-<img src="images/facilities/operation-theatre.jpg" alt="Well-Equipped Operation Theatre at Samridhi Hospital" style="width:100%;border-radius:14px;margin:10px 0 6px;" loading="lazy">
+<img src="images/facilities/operation-theatre.jpg" alt="Well-Equipped Operation Theatre at Samridhi Multispeciality Hospital" style="width:100%;border-radius:14px;margin:10px 0 6px;" loading="lazy">
 <h3 class="sec-title mt-4 mb-2" style="font-size:20px;">Precise Diagnostic</h3>
 <p>We deliver timely, cost-effective and premium diagnostic care within secure and safe environments with full confidence.</p>
-<img src="images/facilities/diagnostic.jpg" alt="Precise Diagnostic at Samridhi Hospital" style="width:100%;border-radius:14px;margin:10px 0 6px;" loading="lazy">
+<img src="images/facilities/diagnostic.jpg" alt="Precise Diagnostic at Samridhi Multispeciality Hospital" style="width:100%;border-radius:14px;margin:10px 0 6px;" loading="lazy">
 <h3 class="sec-title mt-4 mb-2" style="font-size:20px;">Doctors-On-Call</h3>
 <p>You can count on our 24/7 Doctor-on-Call Service to provide top-notch healthcare services anytime, any day of the week, ensuring that you receive the best possible care.</p>
 </div>
@@ -625,7 +625,7 @@ $allDeptLinks
 </section>
 "@
 
-New-Page -Rel 'faq\index.html' -Title 'FAQs - Samridhi Hospital Siliguri' -Desc 'Frequently asked questions about appointments, insurance, admission, facilities and services at Samridhi Hospital Siliguri.' -Body @"
+New-Page -Rel 'faq\index.html' -Title 'FAQs - Samridhi Multispeciality Hospital Siliguri' -Desc 'Frequently asked questions about appointments, insurance, admission, facilities and services at Samridhi Multispeciality Hospital Siliguri.' -Body @"
 <div class="page-inner"><span class="page-wm"></span><div class="container"><h1>Frequently Asked Questions</h1><div class="crumb"><a href="index.html">Home</a> <i class="bi bi-chevron-right"></i> FAQs</div></div></div>
 <section class="sec-pad">
 <div class="container">
@@ -641,11 +641,11 @@ New-Page -Rel 'faq\index.html' -Title 'FAQs - Samridhi Hospital Siliguri' -Desc 
 $docDepts = @($DOCTYPE | ForEach-Object { $_.dept } | Sort-Object -Unique)
 $docHtml = ''
 foreach($s in $docDepts){ $docHtml += "<a class=""btn btn-sm m-1"" style=""border:1px solid #D4AF37;color:#0B2B66;font-weight:700;"" href=""doctor/$s"">$($DEF_DISPLAY[$s])</a>" }
-New-Page -Rel 'doctors\index.html' -Title 'Our Doctors &amp; Consultants - Samridhi Hospital Siliguri' -Desc 'Samridhi Hospital Siliguri is home to a team of experienced doctors and consultants across 16+ specialities.' -Body @"
+New-Page -Rel 'doctors\index.html' -Title 'Our Doctors &amp; Consultants - Samridhi Multispeciality Hospital Siliguri' -Desc 'Samridhi Multispeciality Hospital Siliguri is home to a team of experienced doctors and consultants across 16+ specialities.' -Body @"
 <div class="page-inner"><span class="page-wm"></span><div class="container"><h1>Our Best Doctors &amp; Consultants</h1><div class="crumb"><a href="index.html">Home</a> <i class="bi bi-chevron-right"></i> Doctors</div></div></div>
 <section class="sec-pad">
 <div class="container">
-<div class="sec-title text-center mb-5"><h2>Experts <span class="grd-text">you can trust</span></h2><p>Meet the specialist consultants leading each department at Samridhi Hospital, Siliguri.</p></div>
+<div class="sec-title text-center mb-5"><h2>Experts <span class="grd-text">you can trust</span></h2><p>Meet the specialist consultants leading each department at Samridhi Multispeciality Hospital, Siliguri.</p></div>
 <p class="text-center mb-4">Select a speciality to view its specialist doctors:</p>
 <div class="text-center mb-5">$docHtml</div>
 <h3 class="fw-600 h4 mb-4 text-center">Meet Our Doctors</h3>
@@ -655,7 +655,7 @@ New-Page -Rel 'doctors\index.html' -Title 'Our Doctors &amp; Consultants - Samri
 "@
 
 # ============= APPOINTMENT =============
-New-Page -Rel 'appointment\index.html' -Title 'Book Appointment - Samridhi Hospital Siliguri' -Desc 'Book an appointment online at Samridhi Hospital Siliguri. Call +91 80160 48838 for instant appointment scheduling.' -Body @"
+New-Page -Rel 'appointment\index.html' -Title 'Book Appointment - Samridhi Multispeciality Hospital Siliguri' -Desc 'Book an appointment online at Samridhi Multispeciality Hospital Siliguri. Call +91 80160 48838 for instant appointment scheduling.' -Body @"
 <div class="page-inner"><span class="page-wm"></span><div class="container"><h1>Book an Appointment</h1><div class="crumb"><a href="index.html">Home</a> <i class="bi bi-chevron-right"></i> Appointment</div></div></div>
 <section class="sec-pad">
 <div class="container">
@@ -663,7 +663,7 @@ New-Page -Rel 'appointment\index.html' -Title 'Book Appointment - Samridhi Hospi
 <div class="col-12 col-lg-8">
 <div class="side-card">
 <h5>Send An Appointment Enquiry</h5>
-<p>Submit your details to consult with Samridhi Hospital, and we will get back to you asap.</p>
+<p>Submit your details to consult with Samridhi Multispeciality Hospital, and we will get back to you asap.</p>
 <form action="#" method="post">
 <div class="row g-3">
 <div class="col-md-6"><label class="form-label">Full Name *</label><input type="text" class="form-control" name="name" required></div>
@@ -685,7 +685,7 @@ New-Page -Rel 'appointment\index.html' -Title 'Book Appointment - Samridhi Hospi
 "@
 
 # ============= CONTACT =============
-New-Page -Rel 'contact\index.html' -Title 'Contact Us - Samridhi Hospital Siliguri' -Desc 'Contact Samridhi Hospital Siliguri at 1st Floor, Sikkim Plaza, 3rd Mile Sevoke Road. Emergency: +91 74780 66817.' -Body @"
+New-Page -Rel 'contact\index.html' -Title 'Contact Us - Samridhi Multispeciality Hospital Siliguri' -Desc 'Contact Samridhi Multispeciality Hospital Siliguri at 1st Floor, Sikkim Plaza, 3rd Mile Sevoke Road. Emergency: +91 74780 66817.' -Body @"
 <div class="page-inner"><span class="page-wm"></span><div class="container"><h1>Contact Us</h1><div class="crumb"><a href="index.html">Home</a> <i class="bi bi-chevron-right"></i> Contact</div></div></div>
 <section class="sec-pad">
 <div class="container">
@@ -729,8 +729,8 @@ New-Page -Rel 'contact\index.html' -Title 'Contact Us - Samridhi Hospital Siligu
 "@
 
 # ============= CAREER =============
-New-Page -Rel 'career\index.html' -Title 'Careers at Samridhi Hospital Siliguri' -Desc 'Join the Samridhi Hospital Siliguri team - we are always looking for passionate healthcare professionals.' -Body @"
-<div class="page-inner"><span class="page-wm"></span><div class="container"><h1>Career at Samridhi Hospital</h1><div class="crumb"><a href="index.html">Home</a> <i class="bi bi-chevron-right"></i> Career</div></div></div>
+New-Page -Rel 'career\index.html' -Title 'Careers at Samridhi Multispeciality Hospital Siliguri' -Desc 'Join the Samridhi Multispeciality Hospital Siliguri team - we are always looking for passionate healthcare professionals.' -Body @"
+<div class="page-inner"><span class="page-wm"></span><div class="container"><h1>Career at Samridhi Multispeciality Hospital</h1><div class="crumb"><a href="index.html">Home</a> <i class="bi bi-chevron-right"></i> Career</div></div></div>
 <section class="sec-pad">
 <div class="container">
 <div class="side-card text-center p-5">
@@ -742,7 +742,7 @@ New-Page -Rel 'career\index.html' -Title 'Careers at Samridhi Hospital Siliguri'
 "@
 
 # ============= PRIVACY =============
-New-Page -Rel 'privacy-policy\index.html' -Title 'Privacy Policy - Samridhi Hospital Siliguri' -Desc 'Read the privacy policy of Samridhi Hospital Siliguri.' -Body @"
+New-Page -Rel 'privacy-policy\index.html' -Title 'Privacy Policy - Samridhi Multispeciality Hospital Siliguri' -Desc 'Read the privacy policy of Samridhi Multispeciality Hospital Siliguri.' -Body @"
 <div class="page-inner"><span class="page-wm"></span><div class="container"><h1>Privacy Policy</h1><div class="crumb"><a href="index.html">Home</a> <i class="bi bi-chevron-right"></i> Privacy Policy</div></div></div>
 <section class="sec-pad"><div class="container"><div class="row"><div class="col-12 col-lg-8">$(ConvertTo-BlockHtml (Get-Txt 'privacy-policy'))</div><div class="col-12 col-lg-4">$(Get-Sidebar)</div></div></div></section>
 "@
@@ -755,7 +755,7 @@ $testimonialCards = @"
 </div>
 <article class="side-card mb-3">
   <div class="d-flex align-items-center justify-content-between mb-2"><h4 class="h5 mb-0">Sima Sinha</h4><span class="text-warning fw-600" aria-label="5 out of 5 stars">★★★★★</span></div>
-  <p class="mb-2">&ldquo;I am from Siliguri and I came to Samridhi Hospital with a serious lung-related problem. I could not afford the expensive treatment at a big corporate hospital, so I was worried about how I would manage my treatment. But at Samridhi Hospital, I received very good treatment at a much more affordable cost. The doctors were experienced, caring, and gave me proper attention. The entire staff supported me throughout my treatment. &hellip; Thank you to the entire Samridhi Hospital team for your care, humanity, and support.&rdquo;</p>
+  <p class="mb-2">&ldquo;I am from Siliguri and I came to Samridhi Multispeciality Hospital with a serious lung-related problem. I could not afford the expensive treatment at a big corporate hospital, so I was worried about how I would manage my treatment. But at Samridhi Multispeciality Hospital, I received very good treatment at a much more affordable cost. The doctors were experienced, caring, and gave me proper attention. The entire staff supported me throughout my treatment. &hellip; Thank you to the entire Samridhi Multispeciality Hospital team for your care, humanity, and support.&rdquo;</p>
   <small class="text-muted">Public Google review</small>
 </article>
 <article class="side-card mb-3">
@@ -765,27 +765,27 @@ $testimonialCards = @"
 </article>
 <article class="side-card mb-3">
   <div class="d-flex align-items-center justify-content-between mb-2"><h4 class="h5 mb-0">Satyendra Kumar</h4><span class="text-warning fw-600" aria-label="5 out of 5 stars">★★★★★</span></div>
-  <p class="mb-2">&ldquo;&hellip; After trying several places, we finally came to Samridhi Hospital. My brother was in a very serious condition and needed emergency care and ventilator support. We requested the Samridhi team, and they admitted him and immediately started treatment. The doctors and entire medical team worked with great dedication. The nursing staff continuously supported us, and throughout this difficult time, everyone treated us with humanity and compassion. Today, the happiest moment for our family is that my brother has recovered well and has gone home. &hellip; Thank you, Samridhi Hospital, for standing with our family when we needed help the most.&rdquo;</p>
+  <p class="mb-2">&ldquo;&hellip; After trying several places, we finally came to Samridhi Multispeciality Hospital. My brother was in a very serious condition and needed emergency care and ventilator support. We requested the Samridhi team, and they admitted him and immediately started treatment. The doctors and entire medical team worked with great dedication. The nursing staff continuously supported us, and throughout this difficult time, everyone treated us with humanity and compassion. Today, the happiest moment for our family is that my brother has recovered well and has gone home. &hellip; Thank you, Samridhi Multispeciality Hospital, for standing with our family when we needed help the most.&rdquo;</p>
   <small class="text-muted">Public Google review</small>
 </article>
 <article class="side-card mb-3">
   <div class="d-flex align-items-center justify-content-between mb-2"><h4 class="h5 mb-0">Ajeet Kumar</h4><span class="text-warning fw-600" aria-label="5 out of 5 stars">★★★★★</span></div>
-  <p class="mb-2">&ldquo;&hellip; At Samridhi Hospital, the doctors immediately examined the patient and started the necessary treatment. The doctors explained the situation clearly and guided us throughout the treatment. The nursing staff and other hospital staff were also very supportive and caring. What impressed us most was the personal attention and dedication of the doctors. &hellip; Thankfully, the patient improved and we were able to return home with much more confidence and relief. &hellip; Very grateful to the entire team. Highly recommended for their care and dedication.&rdquo;</p>
+  <p class="mb-2">&ldquo;&hellip; At Samridhi Multispeciality Hospital, the doctors immediately examined the patient and started the necessary treatment. The doctors explained the situation clearly and guided us throughout the treatment. The nursing staff and other hospital staff were also very supportive and caring. What impressed us most was the personal attention and dedication of the doctors. &hellip; Thankfully, the patient improved and we were able to return home with much more confidence and relief. &hellip; Very grateful to the entire team. Highly recommended for their care and dedication.&rdquo;</p>
   <small class="text-muted">Public Google review</small>
 </article>
 "@
-New-Page -Rel 'testimonials\index.html' -Title 'Patient Testimonials - Samridhi Hospital Siliguri' -Desc 'Selected public Google reviews from patients of Samridhi Hospital Siliguri.' -Body @"
+New-Page -Rel 'testimonials\index.html' -Title 'Patient Testimonials - Samridhi Multispeciality Hospital Siliguri' -Desc 'Selected public Google reviews from patients of Samridhi Multispeciality Hospital Siliguri.' -Body @"
 <div class="page-inner"><span class="page-wm"></span><div class="container"><h1>Patient Testimonials</h1><div class="crumb"><a href="index.html">Home</a> <i class="bi bi-chevron-right"></i> Testimonials</div></div></div>
 <section class="sec-pad"><div class="container"><div class="row"><div class="col-12 col-lg-8">$testimonialCards</div><div class="col-12 col-lg-4">$(Get-Sidebar)</div></div></div></section>
 "@
 
-New-Page -Rel 'patients-corner\index.html' -Title "Patient's Corner - Samridhi Hospital Siliguri" -Desc "Useful health information and resources for patients at Samridhi Hospital Siliguri." -Body @"
+New-Page -Rel 'patients-corner\index.html' -Title "Patient's Corner - Samridhi Multispeciality Hospital Siliguri" -Desc "Useful health information and resources for patients at Samridhi Multispeciality Hospital Siliguri." -Body @"
 <div class="page-inner"><span class="page-wm"></span><div class="container"><h1>Patient's Corner</h1><div class="crumb"><a href="index.html">Home</a> <i class="bi bi-chevron-right"></i> Patient's Corner</div></div></div>
 <section class="sec-pad">
 <div class="container">
 <div class="row">
 <div class="col-12">
-<p>Samridhi Hospital is a popular name in the healthcare industry of Siliguri. We understand the importance of proper care and treatment towards patient health and therefore try to provide the best care solutions through the hands of industry experts. Although we offer dedicated and personalised services to every patient, there are a few information that need to be understood by the patients and their family during their medical journey with us.</p>
+<p>Samridhi Multispeciality Hospital is a popular name in the healthcare industry of Siliguri. We understand the importance of proper care and treatment towards patient health and therefore try to provide the best care solutions through the hands of industry experts. Although we offer dedicated and personalised services to every patient, there are a few information that need to be understood by the patients and their family during their medical journey with us.</p>
 <h3 class="sec-title mt-4 mb-3">Rights of Patients</h3>
 <p class="point"><i class="bi bi-check2-circle"></i> Receive adequate care regardless of gender, race, religion and source of payment.</p>
 <p class="point"><i class="bi bi-check2-circle"></i> Demand complete information about diagnostic results, health condition and treatment risks.</p>
@@ -823,16 +823,16 @@ New-Page -Rel 'patients-corner\index.html' -Title "Patient's Corner - Samridhi H
 
 # ============= RESOURCES / MEDIA =============
 function New-EmptyState([string]$title,[string]$crumb,[string]$msg,[string]$rel,[string]$desc){
-  New-Page -Rel $rel -Title ($title + ' - Samridhi Hospital Siliguri') -Desc $desc -Body @"
+  New-Page -Rel $rel -Title ($title + ' - Samridhi Multispeciality Hospital Siliguri') -Desc $desc -Body @"
 <div class="page-inner"><span class="page-wm"></span><div class="container"><h1>$title</h1><div class="crumb"><a href="index.html">Home</a> <i class="bi bi-chevron-right"></i> $crumb</div></div></div>
 <section class="sec-pad"><div class="container"><div class="side-card text-center p-5"><h5 class="mb-2">$title</h5><p class="mb-0 text-muted">$msg</p></div></div></section>
 "@
 }
-New-EmptyState 'Blog' 'Blog' 'Health articles and updates from our specialists will be published here soon.' 'blog\index.html' 'Latest health blogs and articles from Samridhi Hospital Siliguri.'
-New-EmptyState 'Video Gallery' 'Videos' 'Informative health videos from Samridhi Hospital specialists are coming soon.' 'videos\index.html' 'Health and wellness videos from Samridhi Hospital Siliguri.'
-New-EmptyState 'Infographics' 'Infographics' 'Health infographics will be uploaded here soon.' 'infographics\index.html' 'Health infographics from Samridhi Hospital Siliguri.'
-New-EmptyState 'Events &amp; Updates' 'Events' 'News of health camps and community events at Samridhi Hospital Siliguri will be shared here.' 'events\index.html' 'Health camps and community events by Samridhi Hospital Siliguri.'
-New-EmptyState 'Press Release' 'Press Release' 'Official press releases of Samridhi Hospital Siliguri will be available here.' 'press-release\index.html' 'Press releases from Samridhi Hospital Siliguri.'
+New-EmptyState 'Blog' 'Blog' 'Health articles and updates from our specialists will be published here soon.' 'blog\index.html' 'Latest health blogs and articles from Samridhi Multispeciality Hospital Siliguri.'
+New-EmptyState 'Video Gallery' 'Videos' 'Informative health videos from Samridhi Multispeciality Hospital specialists are coming soon.' 'videos\index.html' 'Health and wellness videos from Samridhi Multispeciality Hospital Siliguri.'
+New-EmptyState 'Infographics' 'Infographics' 'Health infographics will be uploaded here soon.' 'infographics\index.html' 'Health infographics from Samridhi Multispeciality Hospital Siliguri.'
+New-EmptyState 'Events &amp; Updates' 'Events' 'News of health camps and community events at Samridhi Multispeciality Hospital Siliguri will be shared here.' 'events\index.html' 'Health camps and community events by Samridhi Multispeciality Hospital Siliguri.'
+New-EmptyState 'Press Release' 'Press Release' 'Official press releases of Samridhi Multispeciality Hospital Siliguri will be available here.' 'press-release\index.html' 'Press releases from Samridhi Multispeciality Hospital Siliguri.'
 
 # ============= SITEMAP =============
 $sitemapEntries = @()
@@ -862,21 +862,21 @@ $sitemapEntries += '<li><a href="urologist-in-siliguri">Urologist in Siliguri</a
 $sitemapEntries += '<li><a href="neurologist-in-siliguri">Neurologist in Siliguri</a></li>'
 $sitemapEntries += '<li><a href="cardiologist-in-siliguri">Cardiologist in Siliguri</a></li>'
 $sitemapEntries += '<li><a href="privacy-policy">Privacy Policy</a></li>'
-New-Page -Rel 'sitemap\index.html' -Title 'Sitemap - Samridhi Hospital Siliguri' -Desc 'Complete sitemap of Samridhi Hospital Siliguri website.' -Body @"
+New-Page -Rel 'sitemap\index.html' -Title 'Sitemap - Samridhi Multispeciality Hospital Siliguri' -Desc 'Complete sitemap of Samridhi Multispeciality Hospital Siliguri website.' -Body @"
 <div class="page-inner"><span class="page-wm"></span><div class="container"><h1>Sitemap</h1><div class="crumb"><a href="index.html">Home</a> <i class="bi bi-chevron-right"></i> Sitemap</div></div></div>
 <section class="sec-pad"><div class="container"><div class="side-card"><h5>All Pages</h5><ul class="mb-0" style="columns:2;gap:30px;">$($sitemapEntries -join '')</ul></div></div></section>
 "@
 
 # ============= SEO LANDING PAGES =============
 $seoPages = @(
-  @{rel='nursing-home-siliguri\index.html'; title='Nursing Home in Siliguri | Samridhi Hospital'; tx='nursing-home-siliguri'},
-  @{rel='orthopaedic-doctor-siliguri\index.html'; title='Orthopaedic Doctor in Siliguri | Samridhi Hospital'; tx='orthopaedic-doctor-siliguri'},
-  @{rel='general-surgery-in-siliguri\index.html'; title='General Surgery in Siliguri | Samridhi Hospital'; tx='general-surgery-in-siliguri'},
-  @{rel='critical-care-siliguri\index.html'; title='Critical Care in Siliguri | Samridhi Hospital'; tx='critical-care-siliguri'},
-  @{rel='gynaecologist-in-siliguri\index.html'; title='Gynaecologist in Siliguri | Samridhi Hospital'; tx='gynaecologist-in-siliguri'},
-  @{rel='urologist-in-siliguri\index.html'; title='Urologist in Siliguri | Samridhi Hospital'; tx='urologist-in-siliguri'},
-  @{rel='neurologist-in-siliguri\index.html'; title='Neurologist in Siliguri | Samridhi Hospital'; tx='neurologist-in-siliguri'},
-  @{rel='cardiologist-in-siliguri\index.html'; title='Cardiologist in Siliguri | Samridhi Hospital'; tx='cardiologist-in-siliguri'}
+  @{rel='nursing-home-siliguri\index.html'; title='Nursing Home in Siliguri | Samridhi Multispeciality Hospital'; tx='nursing-home-siliguri'},
+  @{rel='orthopaedic-doctor-siliguri\index.html'; title='Orthopaedic Doctor in Siliguri | Samridhi Multispeciality Hospital'; tx='orthopaedic-doctor-siliguri'},
+  @{rel='general-surgery-in-siliguri\index.html'; title='General Surgery in Siliguri | Samridhi Multispeciality Hospital'; tx='general-surgery-in-siliguri'},
+  @{rel='critical-care-siliguri\index.html'; title='Critical Care in Siliguri | Samridhi Multispeciality Hospital'; tx='critical-care-siliguri'},
+  @{rel='gynaecologist-in-siliguri\index.html'; title='Gynaecologist in Siliguri | Samridhi Multispeciality Hospital'; tx='gynaecologist-in-siliguri'},
+  @{rel='urologist-in-siliguri\index.html'; title='Urologist in Siliguri | Samridhi Multispeciality Hospital'; tx='urologist-in-siliguri'},
+  @{rel='neurologist-in-siliguri\index.html'; title='Neurologist in Siliguri | Samridhi Multispeciality Hospital'; tx='neurologist-in-siliguri'},
+  @{rel='cardiologist-in-siliguri\index.html'; title='Cardiologist in Siliguri | Samridhi Multispeciality Hospital'; tx='cardiologist-in-siliguri'}
 )
 foreach($p in $seoPages){
   New-Page -Rel $p.rel -Title $p.title -Desc ($p.title + ' - best healthcare services in Siliguri.') -Body @"
@@ -887,14 +887,14 @@ foreach($p in $seoPages){
 
 # ============= DEPARTMENT PAGES =============
 foreach($s in $DEPT_SLUGS){
-  New-Page -Rel ("department\$s\index.html") -Title ($DEF_DISPLAY[$s] + ' - Samridhi Hospital Siliguri') -Desc ('Best ' + ($DEF_DISPLAY[$s] -replace '&amp;','and') + ' specialists and treatment in Siliguri at Samridhi Hospital.') -Body (Get-DeptBody $DEF_DISPLAY[$s] $s) -Depth 2
+  New-Page -Rel ("department\$s\index.html") -Title ($DEF_DISPLAY[$s] + ' - Samridhi Multispeciality Hospital Siliguri') -Desc ('Best ' + ($DEF_DISPLAY[$s] -replace '&amp;','and') + ' specialists and treatment in Siliguri at Samridhi Multispeciality Hospital.') -Body (Get-DeptBody $DEF_DISPLAY[$s] $s) -Depth 2
 }
 
 # ============= SPECIALITY DOCTOR PAGES =============
 foreach($s in $docDepts){
   $disp = $DEF_DISPLAY[$s]
   $doctorList = "<div class=""row"">$(Get-DocCards $s)</div>"
-  New-Page -Rel ("doctor\$s\index.html") -Title ($disp + ' Doctors | Samridhi Hospital Siliguri') -Desc ('Meet our specialist ' + ($disp -replace '&amp;','and') + ' doctors at Samridhi Hospital Siliguri.') -Body @"
+  New-Page -Rel ("doctor\$s\index.html") -Title ($disp + ' Doctors | Samridhi Multispeciality Hospital Siliguri') -Desc ('Meet our specialist ' + ($disp -replace '&amp;','and') + ' doctors at Samridhi Multispeciality Hospital Siliguri.') -Body @"
 <div class="page-inner"><span class="page-wm"></span><div class="container"><h1>$disp Doctors</h1><div class="crumb"><a href="index.html">Home</a> <i class="bi bi-chevron-right"></i> <a href="doctors">Doctors</a> <i class="bi bi-chevron-right"></i> $disp</div></div></div>
 <section class="sec-pad">
 <div class="container">
@@ -911,8 +911,8 @@ $doctorList
 $notFoundBody = @"
 <div class="sec-pad"><div class="container py-lg-4 my-lg-5 text-center"><img src="images/404.png" alt="404" class="max mb-4 transition" width="200" height="72"><h1 class="h1 fw-600" style="color:#0B2B66;">Sorry, Page Not Found!</h1><p class="mb-3 font17">The page you are looking for might have been removed or does not exist.</p><div class="mt-lg-5"><a href="index.html" class="btn btn3 btn-md">Go to Homepage</a></div></div></div>
 "@
-New-Page -Rel '1729247656Dr.html' -Title 'Page Not Found | Samridhi Hospital Siliguri' -Desc 'The page you are looking for might have been removed or does not exist.' -Depth 0 -Body $notFoundBody
-New-Page -Rel '17262072031705491171doctor.html' -Title 'Page Not Found | Samridhi Hospital Siliguri' -Desc 'The page you are looking for might have been removed or does not exist.' -Depth 0 -Body $notFoundBody
+New-Page -Rel '1729247656Dr.html' -Title 'Page Not Found | Samridhi Multispeciality Hospital Siliguri' -Desc 'The page you are looking for might have been removed or does not exist.' -Depth 0 -Body $notFoundBody
+New-Page -Rel '17262072031705491171doctor.html' -Title 'Page Not Found | Samridhi Multispeciality Hospital Siliguri' -Desc 'The page you are looking for might have been removed or does not exist.' -Depth 0 -Body $notFoundBody
 # ============= LEGACY HOMEPAGE DOCTOR / EVENT SLUGS =============
 $homeHtml = [System.IO.File]::ReadAllText((Join-Path $root 'index.html'))
 $drSlugs = @([regex]::Matches($homeHtml,'href="doctor/(dr-[^/"]+)(?:/index\.html)?"') | ForEach-Object { $_.Groups[1].Value } | Sort-Object -Unique)
@@ -920,15 +920,15 @@ foreach($dr in $drSlugs){
   if($DOCTYPE | Where-Object { $_.slug -eq $dr }){ continue }
   if(Test-Path -LiteralPath (Join-Path $root ("doctor\$dr\index.html"))){ continue }
   $nice = ($dr -replace '^dr-','' -replace '-',' ') -replace '\b(\w)',{ param($x) $x.Value.ToUpper() }
-  New-Page -Rel ("doctor\$dr\index.html") -Title "$nice | Samridhi Hospital Siliguri" -Desc "$nice, specialist consultant at Samridhi Hospital Siliguri." -Body @"
+  New-Page -Rel ("doctor\$dr\index.html") -Title "$nice | Samridhi Multispeciality Hospital Siliguri" -Desc "$nice, specialist consultant at Samridhi Multispeciality Hospital Siliguri." -Body @"
 <div class="page-inner"><span class="page-wm"></span><div class="container"><h1>$nice</h1><div class="crumb"><a href="index.html">Home</a> <i class="bi bi-chevron-right"></i> <a href="doctors">Doctors</a> <i class="bi bi-chevron-right"></i> $nice</div></div></div>
-<section class="sec-pad"><div class="container"><div class="row"><div class="col-12 col-lg-8"><div class="side-card text-center"><i class="bi bi-person-badge" style="font-size:52px;color:#D4AF37;"></i><h5 class="mt-3">$nice</h5><p class="text-muted">Specialist consultant at Samridhi Hospital, Siliguri. Full profile is being updated.</p><a class="btn mt-2" style="background:linear-gradient(90deg,#FFC107,#D4AF37);color:#0B2B66;font-weight:800;" href="appointment">Book Appointment</a></div></div><div class="col-12 col-lg-4">$(Get-Sidebar)</div></div></div></section>
+<section class="sec-pad"><div class="container"><div class="row"><div class="col-12 col-lg-8"><div class="side-card text-center"><i class="bi bi-person-badge" style="font-size:52px;color:#D4AF37;"></i><h5 class="mt-3">$nice</h5><p class="text-muted">Specialist consultant at Samridhi Multispeciality Hospital, Siliguri. Full profile is being updated.</p><a class="btn mt-2" style="background:linear-gradient(90deg,#FFC107,#D4AF37);color:#0B2B66;font-weight:800;" href="appointment">Book Appointment</a></div></div><div class="col-12 col-lg-4">$(Get-Sidebar)</div></div></div></section>
 "@ -Depth 2
 }
 foreach($doc in $DOCTYPE){
   $pdf = Join-Path $root ("doctor\$($doc.slug)\index.html")
   if(Test-Path -LiteralPath $pdf){ Remove-Item -LiteralPath $pdf -Force }
-  New-Page -Rel ("doctor\$($doc.slug)\index.html") -Title "$($doc.name) | Samridhi Hospital Siliguri" -Desc "$($doc.about)" -Body @"
+  New-Page -Rel ("doctor\$($doc.slug)\index.html") -Title "$($doc.name) | Samridhi Multispeciality Hospital Siliguri" -Desc "$($doc.about)" -Body @"
 <div class="page-inner"><span class="page-wm"></span><div class="container"><h1>$($doc.name)</h1><div class="crumb"><a href="index.html">Home</a> <i class="bi bi-chevron-right"></i> <a href="doctors">Doctors</a> <i class="bi bi-chevron-right"></i> $($doc.name)</div></div></div>
 $(Get-DoctorBody $doc)
 "@ -Depth 2
@@ -937,7 +937,7 @@ $eSlugs = @([regex]::Matches($homeHtml,'href="e/([^"]+)"') | ForEach-Object { $_
 foreach($ev in $eSlugs){
   if(Test-Path -LiteralPath (Join-Path $root ("e\$ev\index.html"))){ continue }
   $niceEv = ($ev -replace '-',' ') -replace '\b(\w)',{ param($x) $x.Value.ToUpper() }
-  New-Page -Rel ("e\$ev\index.html") -Title "$niceEv | Samridhi Hospital Siliguri" -Desc "$niceEv - news and updates from Samridhi Hospital Siliguri." -Body @"
+  New-Page -Rel ("e\$ev\index.html") -Title "$niceEv | Samridhi Multispeciality Hospital Siliguri" -Desc "$niceEv - news and updates from Samridhi Multispeciality Hospital Siliguri." -Body @"
 <div class="page-inner"><span class="page-wm"></span><div class="container"><h1>$niceEv</h1><div class="crumb"><a href="index.html">Home</a> <i class="bi bi-chevron-right"></i> <a href="events">Events</a> <i class="bi bi-chevron-right"></i> $niceEv</div></div></div>
 <section class="sec-pad"><div class="container"><div class="side-card text-center"><h5 class="mb-2">$niceEv</h5><p class="text-muted mb-0">Full story and photos will be published here soon.</p></div></div></section>
 "@ -Depth 2
