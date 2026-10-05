@@ -11,7 +11,7 @@ $PHONE_EMERGENCY = '+91 74780 66817'
 $PHONE_APPT      = '+91 80160 48838'
 $EMAIL           = 'info@samridhihospital.com'
 $ADDR            = '1st Floor, Sikkim Plaza, 3rd Mile Sevoke Road, Siliguri, West Bengal 734001'
-$GOOGLE_REVIEW_URL  = 'https://www.google.com/maps/place/Samridhi+Multispeciality+Hospital/@26.7571983,88.4412994,17z/data=!4m8!3m7!1s0x39e4410793e8db97:0x9c8fa278ca11b085!8m2!3d26.7571983!4d88.4412994!9m1!1b1'
+$GOOGLE_REVIEW_URL  = 'https://www.google.com/search?q=samridhi+multispeciality+hospital+siliguri+reviews&amp;oq=samridh&amp;gs_lcrp=EgZjaHJvbWUqBggCEEUYOzIGCAAQRRg8MgYIARBFGDkyBggCEEUYOzIGCAMQRRg8MgYIBBBFGDzSAQg1MzgzajBqNKgCALACAQ&amp;sourceid=chrome&amp;source=chrome.ob&amp;ie=UTF-8&amp;sei=chzDatyEDOOihvcP-5mIgA0#lrd=0x39e4410793e8db97:0x9c8fa278ca11b085,3,,,,'
 $GOOGLE_LOCATION_URL = 'https://www.google.com/maps/dir/?api=1&amp;destination=Samridhi+Neuro+%26+ENT+Multispeciality+Hospital&amp;destination_place_id=ChIJl9vokwdB5DkRhbARyniij5w'
 
 $shell = $shell.Replace('https://rb.gy/cx03o0', $GOOGLE_REVIEW_URL)
